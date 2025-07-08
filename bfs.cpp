@@ -5,8 +5,8 @@
 using namespace std;
 
 vector<int> bfs(vector<vector<int>>& adj){
-    int V = adj.size();
-    int vis[V] = {0};
+    int V = adj.size();//no. of nodes
+    int vis[V] = {0};// bool vis[V][V]; memset(vis,false,sizeof(vis));
     vis[0] = 1;
     queue<int> q;
     q.push(0);
@@ -36,7 +36,7 @@ int main(){
         int u,v;
         cin >> u >> v;
         adj[u].push_back(v);
-        adj[v].push_back(u);
+        adj[v].push_back(u);//undirected unweighted graph
     }
 
     vector<int> ans = bfs(adj);
